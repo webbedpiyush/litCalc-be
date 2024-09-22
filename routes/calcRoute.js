@@ -58,6 +58,8 @@ router.post("/", (req, res) => {
       const response = await model.generateContent([prompt, imagePart]);
       // Handle the response from the generative AI
       console.log(response.response.text());
+      const answers = response;
+      console.log(answers);
       res.json({ message: "Image processed", data: response.response.text() });
 
       // Delete the saved image file
