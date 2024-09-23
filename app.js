@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const router = require("./routes/calcRoute");
+const dotenv = require("dotenv");
+dotenv.config();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.ORIGIN,
   })
 );
 app.use(express.json());
